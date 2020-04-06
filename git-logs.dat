@@ -1,0 +1,213 @@
+eee3f4b 2020-04-07 00:51:49 Initial
+98a0842 2020-04-07 01:19:36 Update README.md
+e936ab4 2020-04-07 02:36:27 Update README.md
+066882b 2020-04-07 10:47:53 Bump semver from 7.1.3 to 7.2.1 (#3)
+ec18071 2020-04-07 10:48:06 Bump eslint-loader from 3.0.4 to 4.0.0 (#2)
+6508bdb 2020-04-07 10:48:23 Bump flow-bin from 0.121.0 to 0.122.0 (#1)
+84286d3 2020-04-07 12:59:08 Bump web3.js to v0.43.0 and Solana to v1.1.2
+9210bd9 2020-04-07 12:59:08 Flesh out README.md
+d38f879 2020-04-07 14:16:53 fix lint and flow
+fb646c8 2020-04-07 15:07:55 Add Gitpod support (#4)
+0d64255 2020-04-07 20:24:50 Feedback and fix gitpod build issue
+d507cdb 2020-04-07 20:37:30 Update README.md
+921ba74 2020-04-08 10:44:20 Simplify READMEs (#8)
+54f63e5 2020-04-09 10:53:12 Update README.md
+80fd69c 2020-04-09 17:06:15 Fix client entrypoint link (#7)
+0527046 2020-04-09 17:06:43 Consolidate payer (#10)
+c3808fb 2020-04-09 20:43:18 Bump Solana web3.js SDK to v0.43.4 (#11)
+4321391 2020-04-13 10:01:05 Bump Solana to v1.1.3
+fe29b03 2020-04-14 14:23:19 Update README.md
+1e5a136 2020-04-21 14:00:45 202004 README changes (#13)
+537a079 2020-04-22 12:45:46 Update README-installation-notes.md
+c7fc076 2020-04-29 14:11:25 Add C version of helloworld (#23)
+1db7529 2020-04-29 16:08:44 Improve cluster selection (#24)
+3534449 2020-04-29 16:15:36 fix gitpod
+7d8a33e 2020-04-30 11:57:16 Use dotenv for cluster selection (#25)
+e445f2d 2020-06-11 14:05:57 Bump to Solana v1.2.1 and Web3.js v0.60.0 (#41)
+8ddc821 2020-06-15 19:55:30 Fix gitpod prebuilds (#44)
+ebe1366 2020-06-16 10:20:39 Try to fix prebuild again (#45)
+7c438c8 2020-06-24 10:47:18 Update README.md
+4efefe8 2020-08-11 23:11:29 Bump @solana/web3.js from 0.60.0 to 0.66.3 (#61)
+d128827 2020-08-24 16:38:38 Fix bpf_loading to use original loader (#64)
+6766c11 2020-09-01 11:08:55 Bump Solana versions (#66)
+6e68da2 2020-09-08 11:50:02 Bump solana and web3 versions (#68)
+d5af2c3 2020-09-08 12:03:34 Fix vulnerabilities (#69)
+0510fcc 2020-09-08 23:17:56 Bump solana-web3.js to v0.73.0, solana-sdk to v1.3.9 (#70)
+634c39a 2020-09-18 11:51:29 Use sol_deserialize_deprecated in C program (#75)
+01c6822 2020-09-18 12:07:40 Add more CI steps to test C program (#76)
+96a1058 2020-10-01 11:31:14 Remove unnecessary lifetimes (#78)
+db8ea43 2020-10-02 09:53:24 Update helloworld.c (#79)
+b8a26d2 2020-10-05 17:14:09 Bump web3.js to v0.78.2, solana to v1.3.15 (#80)
+6218f79 2020-10-14 23:31:23 Switch to BPFLoader2 and latest Solana (#83)
+c1a7247 2020-10-28 20:21:11 Update send-and-confirm-transaction.js (#84)
+bc0b25c 2020-10-30 17:45:42 Migrate to TypeScript and clean up package.json (#86)
+ade0053 2020-11-01 12:41:19 Fix npm run test:program-rust (#91)
+29becaa 2020-11-11 00:50:26 Fix store cleaning (#100)
+0cca3ff 2020-11-11 14:05:29 ws error: connect ECONNREFUSED 127.0.0.1:8900 (#96)
+41d13dc 2020-11-13 20:53:25 Update README.md
+09cd856 2020-11-17 02:46:58 Bump solana and web3.js version (#102)
+085c654 2020-11-17 08:14:54 Install solana tools for the current user (#104)
+e0f1348 2020-11-17 08:58:29 Add solana tools to gitpod prebuilds (#107)
+1c810b6 2020-11-17 10:02:50 gipod debugging (#108)
+2bcd4cf 2020-11-17 10:53:26 Use gitpod docker image (#109)
+c2c8eb6 2020-12-04 10:55:26 typos and grammar fixes (#116)
+88a5d0e 2021-01-15 15:16:33 Switch to solana-test-validator (#134)
+8cd7a6c 2021-01-22 14:31:35 Update the README_ZH.md (#81)
+6993c14 2021-02-08 13:11:54 Update README.md (#146)
+beb57d3 2021-02-09 16:32:53 Update README.md
+cc2378f 2021-02-09 16:33:14 Update README_ZH.md
+96d430e 2021-02-10 09:47:51 Update README.md
+80454ec 2021-02-17 22:51:51 Update README.md
+55f4a53 2021-02-17 22:52:18 Update README_ZH.md
+24f4fe8 2021-02-19 00:09:49 update the err links  (#138)
+434a7bb 2021-02-19 00:26:09 Make README_ZH consistent with the README (#152)
+7b3447e 2021-02-19 01:13:11 Bump solana-program from 1.4.8 to 1.5.8; remove deprecated info macro (#132)
+d60cfc5 2021-02-19 01:13:29 Bump @types/prettier from 2.1.5 to 2.2.1 (#149)
+6859a57 2021-02-19 01:13:35 Bump @typescript-eslint/parser from 4.6.0 to 4.15.1 (#150)
+b031049 2021-02-19 01:13:38 Bump @typescript-eslint/eslint-plugin from 4.6.0 to 4.15.1 (#151)
+82a7722 2021-03-01 23:56:39 Add program-test based test (#156)
+46939f7 2021-03-17 00:16:01 Bump prettier from 2.1.2 to 2.2.1 (#155)
+ba73f70 2021-03-17 00:16:13 Bump ts-node from 9.0.0 to 9.1.1 (#153)
+3b5066e 2021-03-17 00:16:19 Bump @types/eslint from 7.2.4 to 7.2.7 (#157)
+373b5c9 2021-03-17 00:52:00 Update to Solana 1.5.15 (#158)
+34e0ba8 2021-03-17 21:07:50 Update to Solana 1.6.1 (#162)
+6e8a2c7 2021-03-27 12:37:23 Document that solana-test-validator is not available for Windows
+b375d07 2021-04-06 16:21:55 Run tests as native (#168)
+32bec73 2021-04-28 22:16:38 Bump @types/mz from 2.7.2 to 2.7.3 (#160)
+b3c086d 2021-04-28 22:16:44 Bump @typescript-eslint/parser from 4.15.1 to 4.22.0 (#170)
+d1b45b3 2021-04-29 09:49:29 Bump start-server-and-test from 1.11.7 to 1.12.1 (#174)
+a284b4e 2021-04-29 09:49:32 Bump @types/eslint from 7.2.7 to 7.2.10 (#175)
+ee17762 2021-04-29 09:49:36 Bump typescript from 4.0.5 to 4.2.4 (#176)
+1e04907 2021-04-29 14:44:29 Switch to borsh for greeting account serialization (#173)
+0671c85 2021-04-29 18:57:49 Use solana cli to watch logs, configure cluster, and deploy programs (#177)
+3c47d43 2021-04-29 20:46:35 Bump eslint-plugin-prettier from 3.1.4 to 3.4.0 (#180)
+b39441a 2021-04-29 20:46:40 Bump eslint from 7.12.1 to 7.25.0 (#179)
+852b0ba 2021-04-29 20:46:45 Bump @types/prettier from 2.2.1 to 2.2.3 (#178)
+bd5b079 2021-04-29 19:59:00 Update logo
+ce53831 2021-04-30 16:24:45 Upgrade to GitHub-native Dependabot (#181)
+4a01008 2021-04-30 17:42:48 Bump @typescript-eslint/eslint-plugin from 4.15.1 to 4.22.0 (#185)
+d5bc060 2021-04-30 17:42:53 Bump @solana/web3.js from 1.7.0 to 1.7.1 (#184)
+be74521 2021-04-30 17:42:57 Update README_ZH.md (#183)
+1920824 2021-04-30 18:45:46 Use BPF SDK bundled with solana tooling (#186)
+3a23250 2021-04-30 18:56:18 Fix config url (#187)
+bae7c4c 2021-05-01 17:18:10 Update README_ZH.md
+7d38f71 2021-05-04 09:35:27 Update README_ZH.md
+6c372df 2021-05-04 09:35:40 Bump @solana/web3.js from 1.7.1 to 1.9.0 (#189)
+814ff3a 2021-05-04 10:02:01 Create README_zh_cn
+65e6ab0 2021-05-04 10:03:26 Rename files
+9d53792 2021-05-04 10:10:08 Update README_ZH_CN.md
+26e4ae1 2021-05-04 20:57:14 Update README.md
+6a210b3 2021-05-07 09:29:52 Remove unused dependencies (#195)
+83771db 2021-05-07 09:52:56 Bump @typescript-eslint/eslint-plugin from 4.22.0 to 4.22.1 (#192)
+6af7c7c 2021-05-07 11:13:26 Bump borsh from 0.3.1 to 0.4.0 (#197)
+bb1334b 2021-05-07 11:13:35 Bump @typescript-eslint/parser from 4.22.0 to 4.22.1 (#191)
+c48ee9e 2021-05-07 11:27:41 Bump @solana/web3.js from 1.9.0 to 1.9.1 (#196)
+4e0d7f1 2021-05-08 10:04:34 Update zh-cn (#198)
+ceb2f6f 2021-05-08 19:50:46 improve gitpod setup (#199)
+44f1c09 2021-05-14 13:32:57 Bump cargo dependencies (#208)
+d5b5b8d 2021-05-14 13:33:14 Bump @solana/web3.js from 1.9.1 to 1.10.1 (#204)
+0ee55e4 2021-05-14 13:33:20 Bump eslint from 7.25.0 to 7.26.0 (#201)
+ad52dc7 2021-05-14 13:33:35 Update translation dead links in README (#205)
+ed57c0f 2021-05-20 10:53:41 [docs] Fixing link to the on-chain programs (#211)
+bb01d62 2021-05-20 10:54:14 Update deps (#216)
+1513f79 2021-05-20 10:55:04 Update the entrypoint links and docs to newer commits (#217)
+ea27d5a 2021-05-20 10:55:20 Bump @typescript-eslint/eslint-plugin from 4.22.1 to 4.24.0 (#213)
+09abac0 2021-05-20 10:55:25 Bump @typescript-eslint/parser from 4.22.1 to 4.24.0 (#212)
+7c57aae 2021-05-20 11:40:28 Bump @solana/web3.js from 1.10.1 to 1.12.0 (#218)
+d4e6da5 2021-05-20 11:40:39 Bump start-server-and-test from 1.12.1 to 1.12.2 (#219)
+bec6a24 2021-05-21 16:39:29 Bump @types/eslint from 7.2.10 to 7.2.11 (#220)
+4aaadb0 2021-05-21 17:14:47 Bump prettier from 2.2.1 to 2.3.0 (#203)
+2947b43 2021-05-21 17:21:28 fix gitpod env (#221)
+6b750e0 2021-05-27 10:18:13 adjust some words (#225)
+4a2c2ac 2021-06-02 16:03:33 Bump @typescript-eslint/eslint-plugin from 4.24.0 to 4.26.0 (#227)
+55d6a04 2021-06-02 16:03:39 Bump eslint from 7.26.0 to 7.27.0 (#223)
+66efd65 2021-06-02 16:03:44 Bump ts-node from 9.1.1 to 10.0.0 (#222)
+4f5cb15 2021-06-04 08:48:24 Create deno.yml
+474b853 2021-06-04 08:53:36 Update and rename deno.yml to main.yml
+37b7ba1 2021-06-04 08:57:22 Update main.yml
+2bbe2d3 2021-06-04 09:23:39 Update main.yml
+8e3ecf6 2021-06-04 09:31:28 Update main.yml
+40d50d2 2021-06-04 09:33:12 Update main.yml
+b6bc4c3 2021-06-04 09:35:02 Update main.yml
+2699f72 2021-06-04 09:40:07 Update main.yml
+b957353 2021-06-04 09:42:01 Update main.yml
+60e886a 2021-06-04 09:45:08 Update main.yml
+49822c3 2021-06-04 09:49:31 Update main.yml
+cc5ba65 2021-06-04 10:00:43 Update main.yml
+a41a4a0 2021-06-11 15:03:29 hello worlds mistype fix for Account (#235)
+2e5c151 2021-07-05 22:07:26 Update to keypair (#243)
+f1725b0 2021-07-09 10:29:11 Bump @solana/web3.js from 1.12.0 to 1.20.2 (#246)
+1daca89 2021-07-09 10:29:36 Bump @types/eslint from 7.2.11 to 7.2.14 (#245)
+784e90f 2021-07-09 10:29:45 Bump @typescript-eslint/parser from 4.24.0 to 4.28.2 (#244)
+cffafd2 2021-07-09 10:55:31 Update solana deps to 1.7.1 (for tests on M1) (#238)
+ac7dced 2021-07-09 10:55:55 Bump start-server-and-test from 1.12.2 to 1.12.6 (#247)
+97dc639 2021-07-09 10:56:00 Bump typescript from 4.2.4 to 4.3.5 (#248)
+2348e12 2021-07-12 18:14:08 Bump ts-node from 10.0.0 to 10.1.0 (#250)
+4144493 2021-07-12 18:14:21 Bump @typescript-eslint/eslint-plugin from 4.26.0 to 4.28.2 (#251)
+0d6d81d 2021-07-26 19:50:10 Don't overwrite Cargo.lock when installing (#260)
+0f43aae 2021-08-06 13:42:18 Bump @typescript-eslint/parser from 4.28.2 to 4.29.0 (#263)
+0efdb39 2021-08-07 15:23:46 Bump prettier from 2.3.0 to 2.3.2 (#267)
+3d128eb 2021-08-07 15:23:52 Bump @types/prettier from 2.2.3 to 2.3.2 (#252)
+725b8ff 2021-08-07 15:57:39 Bump solana-program to 1.7.9 (#269)
+8c17d1b 2021-08-07 16:02:12 Add automerge rule and cargo dependabot rule (#272)
+37623ed 2021-08-07 16:07:34 add/clean up notes for Windows (#256)
+fc2fd07 2021-08-07 16:07:48 Bump @types/mz from 2.7.3 to 2.7.4 (#249)
+1d03d8a 2021-08-07 16:07:58 Bump @typescript-eslint/eslint-plugin from 4.28.2 to 4.29.0 (#270)
+afa3c78 2021-08-07 16:16:39 Remove os name from action name
+a940d1b 2021-08-07 16:17:11 npm audit fix
+1198c55 2021-08-07 16:17:43 Bump borsh from 0.4.0 to 0.5.0 (#274)
+b2938a7 2021-08-07 16:17:48 Bump @solana/web3.js from 1.20.2 to 1.22.0 (#273)
+b4df96b 2021-08-07 16:35:08 Bump start-server-and-test from 1.12.6 to 1.13.1 (#271)
+8b83357 2021-08-07 23:43:50 Bump @types/eslint from 7.2.14 to 7.28.0
+807bfb5 2021-08-07 23:53:45 Bump eslint from 7.27.0 to 7.32.0
+6d55004 2021-08-09 08:25:56 Bump ts-node from 10.1.0 to 10.2.0
+52b0f1a 2021-08-10 08:22:49 Bump @typescript-eslint/parser from 4.29.0 to 4.29.1
+df93495 2021-08-11 08:19:47 Bump @solana/web3.js from 1.22.0 to 1.23.0
+dd51e8c 2021-08-13 08:20:54 Bump @solana/web3.js from 1.23.0 to 1.24.0
+f7f57ee 2021-08-17 08:20:04 Bump @typescript-eslint/eslint-plugin from 4.29.0 to 4.29.2
+4e32d78 2021-08-17 08:34:25 Bump @typescript-eslint/parser from 4.29.1 to 4.29.2
+66e90e8 2021-08-19 08:19:26 Bump borsh from 0.5.0 to 0.6.0
+75a4d03 2021-08-19 08:30:55 Bump ts-node from 10.2.0 to 10.2.1
+b6c6159 2021-08-20 08:19:18 Bump @solana/web3.js from 1.24.0 to 1.24.1
+4435db6 2021-08-23 08:21:47 Bump eslint-plugin-prettier from 3.4.0 to 3.4.1
+1c5240a 2021-08-24 08:19:08 Bump @typescript-eslint/eslint-plugin from 4.29.2 to 4.29.3
+a94dbf2 2021-08-24 08:28:36 Bump @typescript-eslint/parser from 4.29.2 to 4.29.3
+e5f5def 2021-08-27 08:20:14 Bump typescript from 4.3.5 to 4.4.2
+fca5ce6 2021-08-31 08:19:55 Bump @typescript-eslint/eslint-plugin from 4.29.3 to 4.30.0
+e7035de 2021-08-31 08:30:34 Bump eslint-plugin-prettier from 3.4.1 to 4.0.0
+24713d9 2021-08-31 08:41:07 Bump @typescript-eslint/parser from 4.29.3 to 4.30.0
+a43c447 2021-09-03 08:21:45 Bump start-server-and-test from 1.13.1 to 1.14.0
+cf63619 2021-09-06 08:21:18 Bump @solana/web3.js from 1.24.1 to 1.24.2
+9c8a965 2021-09-07 08:19:39 Bump @typescript-eslint/parser from 4.30.0 to 4.31.0
+43929c0 2021-09-07 08:32:24 Bump @typescript-eslint/eslint-plugin from 4.30.0 to 4.31.0
+035173b 2021-09-08 08:19:20 Bump @solana/web3.js from 1.24.2 to 1.25.0
+dcf9086 2021-09-10 08:21:55 Bump @solana/web3.js from 1.25.0 to 1.26.0
+6ea630c 2021-09-10 08:32:26 Bump prettier from 2.3.2 to 2.4.0
+a9449eb 2021-09-11 19:02:22 Update ToC (#305)
+742c481 2021-09-11 19:03:22 Update README.md (#302)
+852b124 2021-09-12 00:30:27 Simplify keypair retrieval + airdrop
+fa4cc29 2021-09-12 00:30:27 npm run lint:fix
+a0794a0 2021-09-12 18:48:13 update nodejs version at engines of package.json
+220b7cb 2021-09-12 18:48:13 add .DS_Store to .gitignore
+d9b56b5 2021-09-12 18:48:13 require Solana CLI >= v1.7.11
+13df057 2021-09-13 08:19:17 Bump typescript from 4.4.2 to 4.4.3
+3b65082 2021-09-14 08:20:14 Bump @typescript-eslint/eslint-plugin from 4.31.0 to 4.31.1
+63463b9 2021-09-14 08:31:19 Bump @typescript-eslint/parser from 4.31.0 to 4.31.1
+a480f1d 2021-09-16 08:21:04 Bump @solana/web3.js from 1.26.0 to 1.27.0
+094a658 2021-09-16 08:31:50 Bump prettier from 2.4.0 to 2.4.1
+6b60623 2021-09-20 08:20:36 Bump @solana/web3.js from 1.27.0 to 1.28.0
+e39fb41 2021-09-21 08:19:23 Bump @solana/web3.js from 1.28.0 to 1.29.0
+cb251c6 2021-09-21 08:28:48 Bump @typescript-eslint/parser from 4.31.1 to 4.31.2
+482661d 2021-09-21 08:41:14 Bump @typescript-eslint/eslint-plugin from 4.31.1 to 4.31.2
+7bd2c44 2021-09-27 08:20:25 Bump @types/prettier from 2.3.2 to 2.4.0
+d83076d 2021-09-27 08:34:01 Bump @solana/web3.js from 1.29.0 to 1.29.1
+18eba9b 2021-09-28 08:19:04 Bump @typescript-eslint/eslint-plugin from 4.31.2 to 4.32.0
+bffa765 2021-09-28 08:27:51 Bump @types/prettier from 2.4.0 to 2.4.1
+1c4eb72 2021-09-28 08:38:57 Bump @typescript-eslint/parser from 4.31.2 to 4.32.0
+d1580e2 2021-09-30 08:20:58 Bump @solana/web3.js from 1.29.1 to 1.29.2
+173fcc0 2021-10-05 08:18:42 Bump @typescript-eslint/eslint-plugin from 4.32.0 to 4.33.0
+4f87881 2021-10-05 08:31:12 Bump @typescript-eslint/parser from 4.32.0 to 4.33.0
+4f43676 2021-10-05 11:38:07 README: fix typo (Berkeley Packet Filter) (#333)
+5a3df5f 2021-10-11 08:21:39 Bump @types/eslint from 7.28.0 to 7.28.1
+aaf8b6d 2021-10-12 08:26:09 Bump ts-node from 10.2.1 to 10.3.0
+cedf632 2021-10-13 08:18:39 Bump typescript from 4.4.3 to 4.4.4
