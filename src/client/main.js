@@ -6,20 +6,16 @@
 
 import {
   establishConnection,
-  establishPayer,
   loadProgram,
   sayHello,
   reportHellos,
 } from './hello_world';
 
 async function main() {
-  console.log("Let's say hello to a Solana account...");
+  console.log('Lets say hello to a Solana account...');
 
   // Establish connection to the cluster
   await establishConnection();
-
-  // Determine who pays for the fees
-  await establishPayer();
 
   // Load the program if not already loaded
   await loadProgram();
@@ -29,8 +25,6 @@ async function main() {
 
   // Find out how many times that account has been greeted
   await reportHellos();
-
-  console.log('Success');
 }
 
 main()

@@ -2,10 +2,8 @@
 // environment. By default, `LIVE=1` will connect to the devnet cluster.
 
 import {clusterApiUrl, Cluster} from '@solana/web3.js';
-import dotenv from 'dotenv';
 
 function chooseCluster(): Cluster | undefined {
-  dotenv.config();
   if (!process.env.LIVE) return;
   switch (process.env.CLUSTER) {
     case 'devnet':
@@ -14,7 +12,7 @@ function chooseCluster(): Cluster | undefined {
       return process.env.CLUSTER;
     }
   }
-  throw 'Unknown cluster "' + process.env.CLUSTER + '", check the .env file';
+  return 'devnet';
 }
 
 export const cluster = chooseCluster();

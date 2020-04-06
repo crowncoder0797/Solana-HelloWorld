@@ -1,13 +1,7 @@
-#![cfg(feature = "program")]
-
 use byteorder::{ByteOrder, LittleEndian};
 use solana_sdk::{
-    account_info::{next_account_info, AccountInfo},
-    entrypoint,
-    entrypoint::ProgramResult,
-    info,
-    program_error::ProgramError,
-    pubkey::Pubkey,
+    account_info::AccountInfo, entrypoint, entrypoint::ProgramResult, info,
+    program_error::ProgramError, program_utils::next_account_info, pubkey::Pubkey,
 };
 use std::mem;
 
@@ -17,11 +11,9 @@ entrypoint!(process_instruction);
 // Program entrypoint's implementation
 fn process_instruction<'a>(
     program_id: &Pubkey, // Public key of the account the hello world program was loaded into
-    accounts: &'a [AccountInfo<'a>], // The account to say hello to
-    _instruction_data: &[u8], // Ignored, all helloworld instructions are hellos
+    accounts: &'a [AccountInfo<'a>], // The accoun to say hello to
+    _instruction_data: &[u8], // Ignored, all instructions are hellos
 ) -> ProgramResult {
-    info!("Helloworld Rust program entrypoint");
-
     // Iterating accounts is safer then indexing
     let accounts_iter = &mut accounts.iter();
 
@@ -36,7 +28,7 @@ fn process_instruction<'a>(
 
     // The data must be large enough to hold a u64 count
     if account.try_data_len()? < mem::size_of::<u32>() {
-        info!("Greeted account data length too small for u32");
+        info!("Greeted account data length too small for u64");
         return Err(ProgramError::InvalidAccountData);
     }
 
@@ -58,7 +50,7 @@ mod test {
     use solana_sdk::clock::Epoch;
 
     #[test]
-    fn test_sanity() {
+    fn test_process_instruction() {
         let program_id = Pubkey::default();
         let key = Pubkey::default();
         let mut lamports = 0;
@@ -89,4 +81,4 @@ mod test {
 
 // Required to support info! in tests
 #[cfg(not(target_arch = "bpf"))]
-solana_sdk::program_stubs!();
+solana_sdk_bpf_test::stubs!();

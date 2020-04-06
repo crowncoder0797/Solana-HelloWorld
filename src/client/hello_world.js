@@ -4,9 +4,7 @@ import {
   Account,
   Connection,
   BpfLoader,
-  BPF_LOADER_DEPRECATED_PROGRAM_ID,
   PublicKey,
-  LAMPORTS_PER_SOL,
   SystemProgram,
   TransactionInstruction,
   Transaction,
@@ -25,11 +23,6 @@ import {sendAndConfirmTransaction} from './util/send-and-confirm-transaction';
 let connection: Connection;
 
 /**
- * Connection to the network
- */
-let payerAccount: Account;
-
-/**
  * Hello world's program id
  */
 let programId: PublicKey;
@@ -38,8 +31,6 @@ let programId: PublicKey;
  * The public key of the account we are saying hello to
  */
 let greetedPubkey: PublicKey;
-
-const pathToProgram = 'dist/program/helloworld.so';
 
 /**
  * Layout of the greeted account data
@@ -55,44 +46,6 @@ export async function establishConnection(): Promise<void> {
   connection = new Connection(url, 'recent');
   const version = await connection.getVersion();
   console.log('Connection to cluster established:', url, version);
-}
-
-/**
- * Establish an account to pay for everything
- */
-export async function establishPayer(): Promise<void> {
-  if (!payerAccount) {
-    let fees = 0;
-    const {feeCalculator} = await connection.getRecentBlockhash();
-
-    // Calculate the cost to load the program
-    const data = await fs.readFile(pathToProgram);
-    const NUM_RETRIES = 500; // allow some number of retries
-    fees +=
-      feeCalculator.lamportsPerSignature *
-        (BpfLoader.getMinNumSignatures(data.length) + NUM_RETRIES) +
-      (await connection.getMinimumBalanceForRentExemption(data.length));
-
-    // Calculate the cost to fund the greeter account
-    fees += await await connection.getMinimumBalanceForRentExemption(
-      greetedAccountDataLayout.span,
-    );
-
-    // Calculate the cost of sending the transactions
-    fees += feeCalculator.lamportsPerSignature * 100; // wag
-
-    // Fund a new payer via airdrop
-    payerAccount = await newAccountWithLamports(connection, fees);
-  }
-
-  const lamports = await connection.getBalance(payerAccount.publicKey);
-  console.log(
-    'Using account',
-    payerAccount.publicKey.toBase58(),
-    'containing',
-    lamports / LAMPORTS_PER_SOL,
-    'Sol to pay for fees',
-  );
 }
 
 /**
@@ -113,30 +66,34 @@ export async function loadProgram(): Promise<void> {
     // try to load the program
   }
 
+  // Read the BPF program bytes
+  const data = await fs.readFile(
+    'src/program/target/bpfel-unknown-unknown/release/solana_bpf_helloworld.so',
+  );
+
+  // Calculate the cost to load the program
+  const {feeCalculator} = await connection.getRecentBlockhash();
+  const NUM_RETRIES = 500; // allow some number of retries
+  let cost =
+    feeCalculator.lamportsPerSignature *
+      (BpfLoader.getMinNumSignatures(data.length) + NUM_RETRIES) +
+    (await connection.getMinimumBalanceForRentExemption(data.length));
+  const bpf_payer = await newAccountWithLamports(connection, cost);
+
   // Load the program
   console.log('Loading hello world program...');
-  const data = await fs.readFile(pathToProgram);
-  const programAccount = new Account();
-  await BpfLoader.load(
-    connection,
-    payerAccount,
-    programAccount,
-    data,
-    BPF_LOADER_DEPRECATED_PROGRAM_ID,
-  );
-  programId = programAccount.publicKey;
+  programId = await BpfLoader.load(connection, bpf_payer, data);
   console.log('Program loaded to account', programId.toBase58());
 
   // Create the greeted account
   const greetedAccount = new Account();
   greetedPubkey = greetedAccount.publicKey;
   console.log('Creating account', greetedPubkey.toBase58(), 'to say hello to');
-  const space = greetedAccountDataLayout.span;
-  const lamports = await connection.getMinimumBalanceForRentExemption(
-    greetedAccountDataLayout.span,
-  );
+  const space = 4; // 64-bit number
+  const lamports = await connection.getMinimumBalanceForRentExemption(space);
+  const payer = await newAccountWithLamports(connection, lamports);
   const transaction = SystemProgram.createAccount({
-    fromPubkey: payerAccount.publicKey,
+    fromPubkey: payer.publicKey,
     newAccountPubkey: greetedPubkey,
     lamports,
     space,
@@ -146,7 +103,7 @@ export async function loadProgram(): Promise<void> {
     'createAccount',
     connection,
     transaction,
-    payerAccount,
+    payer,
     greetedAccount,
   );
 
@@ -172,7 +129,6 @@ export async function sayHello(): Promise<void> {
     'sayHello',
     connection,
     new Transaction().add(instruction),
-    payerAccount,
   );
 }
 
@@ -181,9 +137,6 @@ export async function sayHello(): Promise<void> {
  */
 export async function reportHellos(): Promise<void> {
   const accountInfo = await connection.getAccountInfo(greetedPubkey);
-  if (accountInfo === null) {
-    throw 'Error: cannot find the greeted account';
-  }
   const info = greetedAccountDataLayout.decode(Buffer.from(accountInfo.data));
   console.log(
     greetedPubkey.toBase58(),

@@ -4,6 +4,8 @@ import {sendAndConfirmTransaction as realSendAndConfirmTransaction} from '@solan
 import type {Account, Connection, Transaction} from '@solana/web3.js';
 import YAML from 'json-to-pretty-yaml';
 
+import {newSystemAccountWithAirdrop} from './new-system-account-with-airdrop';
+
 type TransactionNotification = (string, string) => void;
 
 let notify: TransactionNotification = () => undefined;
@@ -12,6 +14,7 @@ export function onTransaction(callback: TransactionNotification) {
   notify = callback;
 }
 
+let payerAccount: Account | null = null;
 export async function sendAndConfirmTransaction(
   title: string,
   connection: Connection,
@@ -20,14 +23,19 @@ export async function sendAndConfirmTransaction(
 ): Promise<void> {
   const when = Date.now();
 
+  if (!payerAccount) {
+    const {feeCalculator} = await connection.getRecentBlockhash();
+    const fees = feeCalculator.lamportsPerSignature * 100; // wag
+    const newPayerAccount = await newSystemAccountWithAirdrop(connection, fees);
+    // eslint-disable-next-line require-atomic-updates
+    payerAccount = payerAccount || newPayerAccount;
+  }
+
   const signature = await realSendAndConfirmTransaction(
     connection,
     transaction,
-    signers,
-    {
-      confirmations: 1,
-      skipPreflight: true,
-    },
+    payerAccount,
+    ...signers,
   );
 
   const body = {
